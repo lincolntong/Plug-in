@@ -1,0 +1,44 @@
+//js
+
+!function (n) {
+    var e = n.document, t = e.documentElement, i = 640, d = i / 100, o = "orientationchange" in n ? "orientationchange" : "resize", a = function () {
+        var n = t.clientWidth || 320;
+        n > 720 && (n = 720), t.style.fontSize = n / d + "px"
+    };
+    e.addEventListener && (n.addEventListener(o, a, !1), e.addEventListener("DOMContentLoaded", a, !1))
+}(window);
+
+
+//老版本
+
+
+(function (doc, win) {
+    var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                clientWidth> 720 && (clientWidth = 720),
+                clientWidth < 320 && (clientWidth = 320),
+//                    if (!clientWidth) return;
+                docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+            };
+
+    if (!doc.addEventListener) return;
+    win.addEventListener(resizeEvt, recalc, false);
+    doc.addEventListener('DOMContentLoaded', recalc, false);
+})(document, window);
+我用在项目上的原型（勿用）
+(function (doc, win) {
+    var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                docEl.style.fontSize = 10 * (clientWidth / 375) + 'px';
+            };
+
+    if (!doc.addEventListener) return;
+    win.addEventListener(resizeEvt, recalc, false);
+    doc.addEventListener('DOMContentLoaded', recalc, false);
+})(document, window);
+
