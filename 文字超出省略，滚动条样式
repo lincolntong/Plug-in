@@ -1,0 +1,18 @@
+
+超过文字省略
+display:block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+
+超过n行，出现....
+.moredot(@clamp:n){
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: @clamp;
+    -webkit-box-orient: vertical;
+}
+
+滚动条样式
+
+::-webkit-scrollbar{height:8px;width:8px;-webkit-appearance:none;}
+::-webkit-scrollbar-thumb{height:40px;width:8px;border-radius: 3px;background-color: #ddd}
