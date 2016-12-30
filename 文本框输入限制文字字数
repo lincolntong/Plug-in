@@ -1,0 +1,58 @@
+限制文本字数
+ 
+ 
+    var cpLock = false;//输入法回车确认再计算长度
+    $('#group_name').on('compositionstart', function () {    //
+        cpLock = true;
+    });
+    $('#group_name').on('compositionend', function () {
+        cpLock = false;
+    });                                   
+    $('#group_name').on("keyup",function () {
+        if (!cpLock) {
+            var curLength=$("#group_name").val().length;
+            var len = 0;
+            var index = 0;
+            for(var i=0;i < curLength;i++ ){
+                var a =i;
+                if($("#group_name").val()[i].match(/[^\x00-\xff]/ig) != null){
+                    len += 2;
+                }else{
+                    len += 1;
+                }
+                console.log(i);
+                if(len <= 20){
+                    index = i;
+                }
+            }
+                if(len > index){
+                    var num=$("#group_name").val().substr(0,index +1);
+                    $("#group_name").val(num);
+                    //alert(index);
+                }
+        }
+    });
+    分割线///////////////////////////////////////////////////////////////////////
+    
+    来源：http://blog.sina.com.cn/s/blog_69ec42d50102wqok.html
+    原文：
+    input输入框输入中文时，监听的input事件怎样屏蔽拼音状态 (2016-08-24 17:08:02)转载▼
+     在input输入框输入中文时，需要即时查询出匹配输入内容的结果，一般我们会使用input事件监听用户输入事件，但是在输入汉语拼音时，也会触发input事件，前端就会不断发送请求，用户体验非常差劲。
+    针对这种情况，笔者给大家介绍一个简单易懂的好方法。代码如下：
+    var cpLock = false;
+    $('#search-input').on('compositionstart', function () {
+        cpLock = true;
+    });
+    $('#search-input').on('compositionend', function () {
+        cpLock = false;
+    });
+    $('#search-input').on('input', function () {
+        if (!cpLock) {
+            // TODO
+        }
+    });
+原理：
+当浏览器有非直接的文字输入时, compositionstart事件会以同步模式触发.
+当浏览器是直接的文字输入时, compositionend会以同步模式触发.
+当元素监听到compositionstart事件，给input中事件加锁，禁止input中事件执行，当元素监听到compositionend事件，给input中事件解锁，正常执行。
+真是一对好用又方便的监听事件啊！
