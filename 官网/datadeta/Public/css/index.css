@@ -1,0 +1,289 @@
+.part-box {
+  opacity: 0;
+}
+.add-delte {
+  z-index: 1;
+}
+.add-delte:before {
+  content: " ";
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 5px solid #ffffff;
+  background: url(../images/site/icon-img1.png) 50% 50% no-repeat;
+  position: absolute;
+  top: -30px;
+  left: calc(50% - 35px);
+}
+.add-delte:after {
+  content: " ";
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 5px solid #ffffff;
+  background: url(../images/site/icon-img1.png) 50% 50% no-repeat;
+  position: absolute;
+  bottom: -30px;
+  left: calc(50% - 35px);
+  z-index: 1;
+}
+.top-banner {
+  padding: 240px 0;
+  text-align: center;
+  background: url(../images/site/top-bg.jpg) 50% 50% no-repeat;
+  background-size: cover;
+  color: #ffffff;
+}
+.top-banner h3 {
+  font-size: 24px;
+  padding-bottom: 55px;
+}
+.top-banner p {
+  font-size: 14px;
+  line-height: 30px;
+}
+.top-banner .btn-active {
+  margin-top: 70px;
+}
+.page-2 .row {
+  padding: 52px 0 0;
+  font-size: 12px;
+}
+.page-2 .row .part .part-box {
+  width: 210px;
+  margin: 0 auto;
+}
+.page-2 .row .part .part-box p {
+  margin-bottom: 0;
+}
+.page-2 .row .part .part-box h4 {
+  font-size: 12px;
+  margin-bottom: 0;
+  font-weight: bold;
+  margin-top: 25px;
+}
+.page-2 .row .part .part-box .text {
+  color: #666666;
+  line-height: 2;
+  margin-top: 15px;
+}
+.page-2 .row .part .part-box .learn-more {
+  color: #eeaf5d;
+  padding-top: 10px;
+}
+.page-3 .part {
+  padding: 90px 70px 0;
+}
+.page-3 .part > div {
+  display: inline-block;
+}
+.page-3 .part .part-box {
+  text-align: center;
+  width: 255px;
+  vertical-align: middle;
+  padding: 0 15px;
+}
+.page-3 .part .part-box img {
+  width: 100%;
+  height: 165px;
+  border: 5px solid #555e6b;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+.page-3 .part .part-box .fig {
+  font-size: 14px;
+}
+.page-3 .part .plus {
+  vertical-align: middle;
+}
+.page-3 .part .equal {
+  vertical-align: middle;
+}
+.page-4 .part {
+  padding: 65px 0 0;
+}
+.page-4 .part .part-box .fig-top {
+  width: 315px;
+  height: 250px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  color: #ffffff;
+  padding-top: 75px;
+  background-size: cover;
+}
+.page-4 .part .part-box .fig-top .fig-bg {
+  width: 185px;
+  height: 100px;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding-top: 22px;
+}
+.page-4 .part .part-box .fig-top p {
+  margin-bottom: 0;
+}
+.page-4 .part .part-box:nth-child(1) .fig-top {
+  background-image: url(../images/site/part2-1.jpg);
+}
+.page-4 .part .part-box:nth-child(2) .fig-top {
+  background-image: url(../images/site/part2-2.jpg);
+}
+.page-4 .part .part-box:nth-child(3) .fig-top {
+  background-image: url(../images/site/part2-3.jpg);
+}
+.page-4 .part .part-box:nth-child(4) .fig-top {
+  background-image: url(../images/site/part2-4.jpg);
+}
+.page-4 .part .fig {
+  width: 260px;
+  margin: 0 auto;
+}
+.page-5 .part {
+  padding: 50px 0 0;
+}
+.page-5 .part p {
+  margin-top: 20px;
+}
+.page-6 .part {
+  padding: 55px 0 0;
+}
+.page-6 .part .part-box {
+  width: 313px;
+  height: 188px;
+  margin: 0 auto;
+  border: 1px solid #169e69;
+  border-radius: 3px;
+  color: #169e69;
+}
+.page-6 .part .part-box h2 {
+  font-size: 48px;
+  padding-bottom: 40px;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+.page-6 .part .part-box p:nth-child(1) {
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+.page-6 .part .part-box p:nth-child(2) {
+  font-size: 20px;
+  margin: 0;
+}
+.page-7 .part {
+  padding: 55px 0 0;
+}
+.page-7 .part .part-box {
+  text-align: center;
+}
+.page-7 .part .part-box .fig-top {
+  width: 315px;
+  height: 250px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  color: #ffffff;
+  background-size: cover;
+  position: relative;
+}
+.page-7 .part .part-box .fig-top h3 {
+  margin-top: 0;
+}
+.page-7 .part .part-box .fig-top p {
+  margin-bottom: 0;
+}
+.page-7 .part .part-box .fig-top .fig {
+  padding-top: 95px;
+  transition: opacity 0.3s linear ;
+}
+.page-7 .part .part-box .fig-top .comment {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.2s linear ;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  padding: 70px 30px 0;
+}
+.page-7 .part .part-box .fig-top .comment p {
+  margin-top: 15px;
+}
+.page-7 .part .part-box .fig-top:hover .fig {
+  opacity: 0;
+}
+.page-7 .part .part-box .fig-top:hover .comment {
+  opacity: 1;
+}
+.page-7 .part .part-box:nth-child(1) .fig-top {
+  background-image: url(../images/site/part4-1.png);
+}
+.page-7 .part .part-box:nth-child(2) .fig-top {
+  background-image: url(../images/site/part4-2.png);
+}
+.page-7 .part .part-box:nth-child(3) .fig-top {
+  background-image: url(../images/site/part4-3.png);
+}
+.page-7 .part .part-box:nth-child(4) .fig-top {
+  background-image: url(../images/site/part4-5.png);
+}
+.page-7 .part .fig {
+  width: 260px;
+  margin: 0 auto;
+}
+.page-8 .form-box {
+  padding-top: 70px;
+  text-align: left;
+  width: 1110px;
+  margin: 0 auto;
+}
+.page-8 .form-box label {
+  display: block;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 500;
+}
+.page-8 .form-box label span {
+  color: #f25656;
+}
+.page-8 .form-box input {
+  height: 40px;
+}
+.page-8 .form-box .group-1 {
+  margin-bottom: 20px;
+}
+.page-8 .form-box .group-1 input {
+  width: 325px;
+  margin-right: 40px;
+}
+.page-8 .form-box .group-2 {
+  margin-bottom: 20px;
+}
+.page-8 .form-box .group-2 .company {
+  width: 695px;
+  margin-right: 40px;
+}
+.page-8 .form-box .group-2 .select {
+  width: 325px;
+  height: 40px;
+}
+.page-8 .form-box .checkbox {
+  display: block;
+  color: #666666;
+}
+.page-8 .form-box .checkbox input {
+  vertical-align: middle;
+  margin-top: 0;
+  height: 30px;
+}
+.page-8 .form-box .group-3 {
+  padding: 10px 0 30px;
+  width: 100%;
+}
+.page-8 .form-box .group-3 textarea {
+  width: 1060px;
+  resize: none;
+}
+.page-8 .form-box .group-4 {
+  text-align: center;
+  width: 100%;
+}
