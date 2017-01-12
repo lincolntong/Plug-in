@@ -1,0 +1,20 @@
+
+//点击按钮显示下拉：
+$(function(){
+    $(".navbar").on("click", function(e){
+        if($(".app-list-box").is(":hidden")){
+            $(".app-list-box").slideDown();
+        }else{
+            $(".app-list-box").slideUp(300);
+        }
+        e.stopPropagation();
+    });
+})
+//点击除下拉区域外，收起导航
+$(document).on("click", function(e){
+    e = window.event || e;  //firefox
+    var obj = e.srcElement || e.target;  //ie
+    if(!$(obj).parents().is(".app-list-box") && !$(obj).is(".app-list-box") ) {
+        $(".app-list-box").slideUp(300);
+    }
+});
