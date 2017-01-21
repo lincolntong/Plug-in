@@ -1,0 +1,12 @@
+js
+
+    $('.input').bind('input propertychange', function() {
+        var typeValue = $(this).val();
+        if(typeValue != false){
+            dosomething....
+        }else{
+            dosomething....
+        }
+    });
+    
+    有bug，只监听鼠标和键盘事件，写方法，读数据的没法触发事件。
