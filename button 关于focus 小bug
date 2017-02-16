@@ -1,0 +1,15 @@
+<button>我是按钮</button>
+
+样式书写顺序：
+focus =>  hover=> active  
+
+focus 要在前面，否则 button 会有个点击的bug，但 a，div 不会.
+css:
+
+button{
+  border:1px solid transparent!important;background-color: @active-color;color:#ffffff;
+  &:focus{background-color: #e4761d;color:#ffffff;}
+  &:hover{background-color: #f6994e;color:#ffffff;}
+  &:active{background-color: #e4761d;color:#ffffff;}
+
+}
