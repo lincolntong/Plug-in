@@ -1,0 +1,54 @@
+常规设置
+function uiDialog(e,btn,title,callback){
+    var mytitle = title?title:" ";
+    var elem = $(e);
+    $(document).on('click', btn, function(){
+        var d = dialog({
+            title: mytitle,
+            content: elem,
+            okValue: '确定',
+            ok: function () {
+                //this.title('提交中…');
+                if(typeof callback === "function")
+                    callback(d);
+                return false;
+            },
+            cancelValue: '取消',
+            cancel: function () {}
+        });
+        d.showModal();
+    });
+}
+
+
+
+// 确认提示框设置，
+function showConfirm(msg, ok,cancel, clazz, title) {
+    if(!title)
+        title = '';
+    var d = top.dialog({
+        id:'dlg-confirm',
+        title:title,
+        okValue: '确定',
+        cancelValue: '取消',
+        padding: 20,
+        content: '<div class="" style="display:inline-block;min-width:250px;max-width:350px;padding-top:30px;text-align:center;padding-bottom:20px;font-weight:bold;color:#313d4b;font-size:13px;"> '
+                    +'<i class="icon icon-failed" style="margin: 0 5px;"></i>' +msg + '</div>',
+        cancel: true,
+        ok: function() {
+            ok.call(this);
+        },
+        cancel:function(){
+            if( cancel ){
+                cancel.call(this);
+            }
+        }
+    }).showModal();
+    console.log(d)
+    if(clazz)
+        $(d.node).addClass(clazz);
+
+    else
+        $(d.node).addClass('confirm');
+    return d;
+}
