@@ -1,0 +1,51 @@
+$('iframe', d.node).load(function () {
+            var self = this;
+            var doc = this.contentWindow.document;
+            //$('.ui-dialog-content', d.node).height(300);
+            //if (doc.body.scrollHeight > 300)
+            //    $('.ui-dialog-content', d.node).height(doc.body.scrollHeight);
+            $('.time input', doc).focus(function () {
+                $('.ui-dialog-content', d.node).height(300);
+                if (doc.body.scrollHeight > 300)
+                    $('.ui-dialog-content', d.node).height(doc.body.scrollHeight + 20);
+            }).blur(function(){
+                $('.ui-dialog-content', d.node).height(300);
+                if (doc.body.scrollHeight > 300)
+                    $('.ui-dialog-content', d.node).height(doc.body.scrollHeight);
+            })
+            
+            
+            
+            
+            d是什么？是弹窗，d.node  可获取所有d的html节点
+            
+            
+            
+             var d = dialog({
+            id: 'showMessage_dialog',
+            url: '/Contact/Index/v5_show_contact?&init_hide=1&person_id='+person_id+'&platform_id='+platform_id,
+            padding: 0,
+            quickClose: false,
+            width: width,
+            height: height,
+            okValue: '发送',
+            cancelValue: '取消',
+            cancel: function(){
+                d.close().remove();
+                return false;
+            },
+            ok: function () {
+                if ($('iframe', d.node)[0].contentWindow) {
+                    $('.btn-primary', d.node).setLoading(3);
+                    var w = $('iframe', d.node)[0].contentWindow;
+                    var doc = w.document;
+                    if ($('.tab-content .tab-pane.active .btn_save', doc)[0]) {
+                        $('.tab-content .tab-pane.active .btn_save', doc).trigger('click');
+                    } else {
+                        $('.tab-content .tab-pane.active .btn-send', doc).trigger('click');
+                    }
+                    return false;
+                }
+                return false;
+            }
+        });
