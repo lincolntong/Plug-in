@@ -1,0 +1,24 @@
+  <ul class="nav_list">
+    <li><a herf="./index.html">首页</a></li>  
+    <li><a herf="./product.html">产品</a></li>  
+    <li><a herf="./contact.html">关于我们</a></li>  
+    <li class='sideline' style="position;absobute"></li>  
+  
+  
+  var box = $(".nav_list");
+    var sl = $(".sideline");
+    box.find("li").on("click",function(e) {
+        var thatw = $(this).width() - 14;
+        var thatl = $(this).position().left + 7;
+        var that = $(this);
+        if (!e.ctrlKey) {
+            var active = box.find(".active");
+            sl.animate({"left": thatl}, 200).animate({"width": thatw}, 100);
+            setTimeout(function () {
+                window.location.href = that.find("a").attr("href");
+            }, 300);
+        } else {
+            window.open(that.find("a").attr("href"));
+        }
+        return false;
+    });
