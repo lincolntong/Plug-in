@@ -1,0 +1,4 @@
+window.getSelection()
+
+如果是文本选中，则不触发事件
+if(!window.getSelection().toString()){}
