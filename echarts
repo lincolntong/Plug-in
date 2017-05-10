@@ -1,0 +1,9 @@
+//自适应屏幕尺寸变化
+
+ var report = echarts.init(document.getElementById("contact_stage"));
+    report.setOption(option);
+    setTimeout(function (){
+        window.onresize = function () {
+            report.resize();
+        }
+    },200);
