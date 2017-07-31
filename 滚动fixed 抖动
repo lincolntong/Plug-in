@@ -11,4 +11,10 @@ var bar_top = $('.bar-top').offset().top;   //重点：获取 offset().top;  在
             
             $(window).scroll(function(){
                 fixed_contact();
-            });
+            }
+            
+            //判断滚动到最底部：
+             if ($(document).scrollTop() >= $(document).height() - $(window).height()) {
+                    alert("滚动条已经到达底部为" + $(document).scrollTop());
+                }
+                
