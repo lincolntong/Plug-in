@@ -1,0 +1,14 @@
+var bar_top = $('.bar-top').offset().top;   //重点：获取 offset().top;  在 $(window).scroll 之外获取，不然重新获取，fixed 是为 你fixed的top值
+
+
+            function fixed_contact(){
+                if($(window).scrollTop() > bar_top){
+                    $('.bar-top').addClass('fixed_contact');
+                }else{
+                    $('.bar-top').removeClass('fixed_contact');
+                }
+            }
+            
+            $(window).scroll(function(){
+                fixed_contact();
+            });
