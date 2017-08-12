@@ -1,0 +1,12 @@
+ function show_title(){
+            $('.text_remark').each(function(){
+                var remark_t = $(this);
+                if (remark_t[0].offsetWidth < remark_t[0].scrollWidth) {
+                    remark_t.attr('data-original-title',remark_t.text());
+                }else{
+                    remark_t.attr('title','');
+                    remark_t.attr('data-original-title','');
+
+                }
+            })
+        }
