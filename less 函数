@@ -1,0 +1,20 @@
+.opacity_style(@index: 1;) when (@index <= 10) {
+  .text-opacity@{index} {
+      opacity:@index / 10;
+  }
+  .text-opacity {
+    opacity:@index / 10;
+  }
+  .opacity_style(@index + 1);
+}
+.opacity_style(1);
+
+
+css:
+.text-opacity{ opacity:0.1}
+.text-opacity{ opacity:0.2}
+.text-opacity{ opacity:0.3}
+.text-opacity{ opacity:0.4}
+.
+.
+.text-opacity{ opacity:1}
