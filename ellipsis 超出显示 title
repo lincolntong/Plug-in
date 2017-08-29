@@ -1,12 +1,15 @@
- function show_title(){
-            $('.text_remark').each(function(){
-                var remark_t = $(this);
-                if (remark_t[0].offsetWidth < remark_t[0].scrollWidth) {
-                    remark_t.attr('data-original-title',remark_t.text());
-                }else{
-                    remark_t.attr('title','');
-                    remark_t.attr('data-original-title','');
-
-                }
-            })
+function ellipsis_show_title(classname){
+    $('.'+ classname).each(function(i,v){
+    //scrollWidth 为js对象，而非jquery对象
+        var scrollwidth = document.getElementsByClassName(classname)[i].scrollWidth;
+        var width = $('.' + classname).eq(i).width();
+        console.log(scrollwidth + '+' + width);
+        if(width < scrollwidth ){
+        }else{
+            $(this).attr('title','');
+            $(this).attr('data-original-title','');
+            $('[data-toggle="tooltip"]').tooltip();
         }
+    })
+
+}
