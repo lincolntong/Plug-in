@@ -1,0 +1,18 @@
+原因:先写入val，再对input进行focus，光标会再最左，
+
+解决方案:
+
+    调用focus方法
+    value赋值为空
+    之前的input的值再赋给自己
+    
+    <p>
+    <input type="text" value="hello"/>
+</p>
+<script>
+    var input = document.getElementsByTagName('input')[0];
+    var val = input.value;
+    input.focus();
+    input.value = '';
+    input.value = val;
+</script>
