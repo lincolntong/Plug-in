@@ -3,7 +3,6 @@ iframe 内部操作父节点 （ui-dialog-content 为父节点）
 
 $('.ui-dialog-content', parent.document).css('height','500px')
 
-
 。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。
 dialog：
 $('iframe', d.node).load(function () {
