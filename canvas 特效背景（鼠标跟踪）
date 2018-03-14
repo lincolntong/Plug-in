@@ -1,28 +1,14 @@
-<html lang="zh-cn"><head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>关于移动端video标签层级问题 - 段跃 - 博客园</title>
-<link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=-hy83QNg62d4qYibixJzxMJkbf1P9fTBlqv7SK5zVL01">
-<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/CodingLife/bundle-CodingLife.css?v=g4Oce5UBaUn_FUwadcT09ICEg5NkULQGtUpNhTtrI8U1">
-<link type="text/css" rel="stylesheet" href="/blog/customcss/350033.css?v=oa2qcQNcOjdrtJGuE9XHLAZuZAA%3d">
-<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/CodingLife/bundle-CodingLife-mobile.css?v=Xay8b9tTSw814nBzbOgvS6rrbcxrobMhvHJHdZAO9vI1">
-<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/duanyue/rss">
-<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/duanyue/rsd.xml">
-<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/duanyue/wlwmanifest.xml">
-<script async="" src="https://www.google-analytics.com/analytics.js"></script><script src="//common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
-<script type="text/javascript">var currentBlogApp = 'duanyue', cb_enable_mathjax=false;var isLogined=false;</script>
-<script src="/bundles/blog-common.js?v=O-NTEmnhjbG7lSYLc3yeqkrVxfMJyY9iXf4xyjlKikw1" type="text/javascript"></script>
-<style type="text/css">.heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: absolute;}.heart:after{top: -5px;}.heart:before{left: -5px;}</style></head>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>特效背景</title>
+</head>
 <body>
 
-<div id="page_begin_html"><canvas id="cas" width="1920" height="227"></canvas>
-
+<div id="page_begin_html">
+    <canvas id="cas" width="1920" height="227"></canvas>
 </div>
-
-
-
-
-
 <script type="text/javascript">
     var canvas = document.getElementById("cas");
     var ctx = canvas.getContext("2d");
@@ -32,19 +18,19 @@
         canvas.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
         canvas.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
     }
-    var RAF = (function() {
-        return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function(callback) {
-                window.setTimeout(callback, 1000 / 60);
-            };
+    var RAF = (function () {
+        return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function (callback) {
+                    window.setTimeout(callback, 1000 / 60);
+                };
     })();
     // 鼠标活动时，获取鼠标坐标
     var warea = {x: null, y: null, max: 20000};
-    window.onmousemove = function(e) {
+    window.onmousemove = function (e) {
         e = e || window.event;
         warea.x = e.clientX;
         warea.y = e.clientY;
     };
-    window.onmouseout = function(e) {
+    window.onmouseout = function (e) {
         warea.x = null;
         warea.y = null;
     };
@@ -65,7 +51,7 @@
         })
     }
     // 延迟100秒开始执行动画，如果立即执行有时位置计算会出错
-    setTimeout(function() {
+    setTimeout(function () {
         animate();
     }, 100);
     // 每一帧循环的逻辑
@@ -73,7 +59,7 @@
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         // 将鼠标坐标添加进去，产生一个用于比对距离的点数组
         var ndots = [warea].concat(dots);
-        dots.forEach(function(dot) {
+        dots.forEach(function (dot) {
             // 粒子位移
             dot.x += dot.xa;
             dot.y += dot.ya;
@@ -115,4 +101,6 @@
         });
         RAF(animate);
     }
-</script></body></html>
+</script>
+</body>
+</html>
