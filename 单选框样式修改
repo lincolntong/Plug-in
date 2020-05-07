@@ -1,0 +1,59 @@
+原生：
+<input type="checkbox">
+
+css:
+input[type=checkbox]:checked{
+  background: url(/Public/v5/images/selected.png);
+  border: none;
+}
+input[type=checkbox] {
+  -webkit-appearance: none;
+  border:1px solid #abbbcc;
+  border-radius: 1px;
+  outline-offset: -1px;
+  background: #fff;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-top: 2px;
+  &:hover{cursor: pointer;}
+  &:focus{outline: none;}
+}
+
+
+次生品：
+
+html:
+
+<input type="radio" id="news-1" name="news" class="radio-primary" /><label for="news-1"></label>
+
+
+
+css:
+.radio-primary {
+  display: none;
+}
+.radio-primary + label {
+  background-color: #ffffff;
+  border: 1px solid #d8d9d9;
+  padding: 9px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+}
+
+.radio-primary:checked + label:after {
+  content: ' ';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  background: #567fc7;
+  left: 5px;
+}
+
+.radio-primary:checked + label {
+  background-color: #ffffff;
+  border: 1px solid #d8d9d9;
+}
