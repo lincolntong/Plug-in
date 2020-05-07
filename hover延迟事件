@@ -1,0 +1,14 @@
+$(function(){
+            $(".icon-di_help").mouseenter(function(){
+                $this=$(this);
+               show=setTimeout(function(){
+                    $this.next().css("display","inline-block")
+                },1000) ;
+            }).mouseleave(function(){
+                $this=$(this);
+                clearTimeout(show);
+                setTimeout(function(){
+                    $this.next().css("display","none")
+                },500)
+            });
+        })
